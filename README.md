@@ -117,7 +117,7 @@ This class has been designed to be "safe" for all cases when "<u>contents</u>" i
  <ul> <li>Concatenations (the ~ operator, not appends) will work as expected, but the result will always be allocated in managed memory (use Data classes to avoid this)</li>
   <li>Appends ( ~= ) to <u>contents</u> will cause undefined behavior - you should use Data classes instead</li>
   <li>Be sure to keep the Data reference reachable by the GC - otherwise <u>contents</u> can become a dangling pointer!</li>
- </ul><br><br>
+ </ul>
 
 </dd>
 <dt><big>void* <u>ptr</u>();
