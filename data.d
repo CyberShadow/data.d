@@ -467,7 +467,7 @@ final class DataBlock
 
 	static void free(void* p, size_t size)
 	{
-		(cast(ubyte*)p)[0..size] = 0xBA;
+		debug(DataStomp) (cast(ubyte*)p)[0..size] = 0xBA;
 		version(Windows)
 			return VirtualFree(p, 0, MEM_RELEASE);
 		else
