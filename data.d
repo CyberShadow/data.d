@@ -332,11 +332,11 @@ private: // Implementation detail follows
 version (Windows)
 	import std.c.windows.windows;
 else version (FreeBSD)
-    import std.c.freebsd.freebsd;
+	import std.c.freebsd.freebsd;
 else version (Solaris)
-    import std.c.solaris.solaris;
+	import std.c.solaris.solaris;
 else version (linux)
-    import std.c.linux.linux;
+	import std.c.linux.linux;
 
 /// Actual block.
 final class DataBlock
