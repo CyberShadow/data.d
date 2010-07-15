@@ -18,7 +18,7 @@
  *  $(LI Accessing the contents of the Data object involves two levels of indirection. (This can be reduced to one level of indirection in future versions.) )
  *  $(LI Small objects may be stored inefficiently, as the module requests entire pages of memory from the OS. Considering allocating one large object and use slices (Data instances) for individual objects.)
  * )
- * Feature directions (TODO):
+ * Future directions (TODO):
  * $(UL
  *  $(LI Cache Data.block.contents to reduce the level of indirection to 1)
  *  $(LI Port to D2)
@@ -156,7 +156,7 @@ public:
 
 	/// Append data to the current instance, in-place if possible.
 	/// Note that unlike opCat (a ~ b), opCatAssign (a ~= b) will preallocate.
-	/// WARNING: following "legacy" D behavior, this will stomp on available 
+	/// WARNING: Following "legacy" D behavior, this will stomp on available 
 	/// memory in the same DataBlock that happens to be after this Data's end - 
 	/// that is, if you append to a slice of Data, the appended data will 
 	/// overwrite whatever was after the current instance's slice.
