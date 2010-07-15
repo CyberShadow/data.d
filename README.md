@@ -10,7 +10,7 @@ Using the Data class will only place a small object in managed memory, keeping t
  <ul> <li>Faster allocation and deallocation, since memory is requested from the OS directly as whole pages</li>
   <li>Greatly reduced chance of memory leaks due to stray pointers</li>
   <li>Overall improved GC performance due to reduced size of managed heap</li>
-  <li>Memory is immediately returned to the OS when data in deallocated</li>
+  <li>Memory is immediately returned to the OS when data is deallocated</li>
  </ul>
  On the other hand, using Data has the following disadvantages:
  <ul> <li>This module is designed to store raw data which does not have any pointers. Storing objects containing pointers to managed memory is unsupported.</li>

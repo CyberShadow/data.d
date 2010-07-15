@@ -10,7 +10,7 @@
  *  $(LI Faster allocation and deallocation, since memory is requested from the OS directly as whole pages)
  *  $(LI Greatly reduced chance of memory leaks due to stray pointers)
  *  $(LI Overall improved GC performance due to reduced size of managed heap)
- *  $(LI Memory is immediately returned to the OS when _data in deallocated)
+ *  $(LI Memory is immediately returned to the OS when _data is deallocated)
  * )
  * On the other hand, using Data has the following disadvantages:
  * $(UL
