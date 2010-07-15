@@ -5,13 +5,14 @@ Using the Data class will only place a small object in managed memory, keeping t
  A proxy class (DataBlock) is used to safely allow multiple references to the same block of unmanaged memory.
  When the DataBlock object is destroyed (either manually or by the garbage collector when there are no remaining Data references), the unmanaged memory is deallocated.
 
+
  This has the following advantage over using managed memory:
  <ul> <li>Faster allocation and deallocation, since memory is requested from the OS directly as whole pages</li>
   <li>Greatly reduced chance of memory leaks due to stray pointers</li>
   <li>Overall improved GC performance due to reduced size of managed heap</li>
   <li>Memory is immediately returned to the OS when data in deallocated</li>
  </ul>
- On the contrary, using Data has the following disadvantages:
+ On the other hand, using Data has the following disadvantages:
  <ul> <li>This module is designed to store raw data which does not have any pointers. Storing objects containing pointers to managed memory is unsupported.</li>
   <li>Accessing the contents of the Data object involves two levels of indirection. (This can be reduced to one level of indirection in future versions.) </li>
   <li>Small objects may be stored inefficiently, as the module requests entire pages of memory from the OS. Considering allocating one large object and use slices (Data instances) for individual objects.</li>
@@ -22,11 +23,12 @@ Using the Data class will only place a small object in managed memory, keeping t
   <li>Templatize and enforce non-aliased types only</li>
  </ul>
 
+
 <b>Authors:</b><br>
 Vladimir Panteleev <vladimir@thecybershadow.net>
 
 <b>License:</b><br>
-Public Domain<br><br>
+Public Domain
 
 <dl><dt><big>class <u>Data</u>;
 </big></dt>

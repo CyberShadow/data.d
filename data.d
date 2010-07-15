@@ -12,7 +12,7 @@
  *  $(LI Overall improved GC performance due to reduced size of managed heap)
  *  $(LI Memory is immediately returned to the OS when _data in deallocated)
  * )
- * On the contrary, using Data has the following disadvantages:
+ * On the other hand, using Data has the following disadvantages:
  * $(UL
  *  $(LI This module is designed to store raw _data which does not have any pointers. Storing objects containing pointers to managed memory is unsupported.)
  *  $(LI Accessing the contents of the Data object involves two levels of indirection. (This can be reduced to one level of indirection in future versions.) )
@@ -50,7 +50,7 @@ final class Data
 private:
 	/// Reference to the wrapper of the actual data.
 	DataBlock block;
-	/// Real allocated capacity. If 0, then contents represents a slice of memory owned by another Data class.
+	/// Slice boundaries of the data block.
 	size_t start, end;
 
 	/// Maximum preallocation for append operations.
