@@ -21,6 +21,7 @@ Using the Data class will only place a small object in managed memory, keeping t
  <ul> <li>Cache Data.block.contents to reduce the level of indirection to 1</li>
   <li>Port to D2</li>
   <li>Templatize and enforce non-aliased types only</li>
+  <li>The Data class should be a struct</li>
  </ul>
 
 
@@ -90,7 +91,7 @@ Following "legacy" D behavior, this will stomp on available
  overwrite whatever was after the current instance's slice.<br><br>
 
 </dd>
-<dt><big>Data <u>splice</u>(uint <i>pos</i>, void[] <i>data</i>);
+<dt><big>Data <u>splice</u>(size_t <i>pos</i>, void[] <i>data</i>);
 </big></dt>
 <dd>Inserts <i>data</i> at <i>pos</i>. Will preallocate, like opCatAssign.<br><br>
 
@@ -100,7 +101,7 @@ Following "legacy" D behavior, this will stomp on available
 <dd>Duplicates the current instance, but does not actually copy the data.<br><br>
 
 </dd>
-<dt><big>Data <u>opSlice</u>(uint <i>x</i>, uint <i>y</i>);
+<dt><big>Data <u>opSlice</u>(size_t <i>x</i>, size_t <i>y</i>);
 </big></dt>
 <dd>Return a new Data object representing a slice of the current object's memory. Does not actually copy the data.<br><br>
 
@@ -125,19 +126,19 @@ This class has been designed to be "safe" for all cases when "<u>contents</u>" i
 <dd>Return a pointer to the beginning of referenced data.<br><br>
 
 </dd>
-<dt><big>uint <u>length</u>();
+<dt><big>size_t <u>length</u>();
 </big></dt>
 <dd>Return the <u>length</u> of referenced data.<br><br>
 
 </dd>
-<dt><big>void <u>length</u>(uint <i>value</i>);
+<dt><big>void <u>length</u>(size_t <i>value</i>);
 </big></dt>
 <dd>Resize, in-place when possible.<br><br>
 
 </dd>
 </dl>
 </dd>
-<dt><big>Data <u>readData</u>(char[] <i>filename</i>);
+<dt><big>Data <u>readData</u>(string <i>filename</i>);
 </big></dt>
 <dd>Read a file directly into a new Data block.<br><br>
 

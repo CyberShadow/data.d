@@ -23,6 +23,7 @@
  *  $(LI Cache Data.block.contents to reduce the level of indirection to 1)
  *  $(LI Port to D2)
  *  $(LI Templatize and enforce non-aliased types only)
+ *  $(LI The Data class should be a struct)
  * )
  *
  * Authors:
